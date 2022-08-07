@@ -440,6 +440,9 @@ color: var(--logo-main-color);
 .footer-wrapper-item:not(:last-child) {
     margin-right: 70px;
 }
+.footer-wrapper-item:last-child {
+    margin-left: auto;
+}
 .social-list-footer {
     margin-top: 20px;
 }
@@ -467,21 +470,32 @@ color: var(--logo-main-color);
     font-size: 16px;
     line-height: 1.88;
     letter-spacing: 0.06em;
+
+    transition: background-color var(--time-and-function), box-shadow var(--time-and-function);
+}
+.send-email-btn:hover, .send-email-btn:focus {
+    background-color: #188CE8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 .send-email-icon {
     fill: currentColor;
 }
 .footer-email-form {
     border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
     height: 50px;
     width: 359px;
     margin-right: 12px;
     padding-left: 16px;
     background-color: transparent;
+    outline: none;
 
     color: var(--body-main-color);
+    transition: border-color var(--time-and-function);
+}
+.footer-email-form:focus, .footer-email-form:hover {
+    border-color: var(--logo-main-color);
 }
 .footer-email-form::placeholder {
     font-weight: 400;
@@ -573,13 +587,14 @@ color: var(--logo-main-color);
     line-height: 1.14;
     margin-bottom: 10px;
 
+    outline: none;
     padding: 12px 12px 12px 42px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
-    transition: outline var(--time-and-function), border-color var(--time-and-function);
+
+    transition: color var(--time-and-function), border-color var(--time-and-function);
 }
-.form-input:focus {
-    outline: 1px solid var(--logo-main-color);
+.form-input:focus-within, .form-input:hover {
     border-color: var(--logo-main-color);
     color: var(--logo-main-color);
 }
@@ -593,7 +608,7 @@ color: var(--logo-main-color);
     transform: translateY(-75%);
     transition: fill var(--time-and-function);
 }
-.form-input:focus + .form-input-icon {
+.form-input:focus-within + .form-input-icon , .form-input:hover + .form-input-icon {
     fill: var(--logo-main-color);
 }
 
@@ -610,12 +625,11 @@ color: var(--logo-main-color);
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.01em;
+    outline: none;
 
-    transition: color var(--time-and-function), outline var(--time-and-function),
-        border-color var(--time-and-function);
+    transition: color var(--time-and-function), border-color var(--time-and-function);
 }
-.form-label:focus-within .form-comment {
-    outline: 1px solid var(--logo-main-color);
+.form-label:focus-within .form-comment, .form-label:hover .form-comment {
     border-color: var(--logo-main-color);
     color: var(--logo-main-color)
 }
@@ -624,7 +638,6 @@ color: var(--logo-main-color);
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.01em;
-    
     color: rgba(117, 117, 117, 0.5);
 }
 .deal-label {
@@ -680,9 +693,10 @@ color: var(--logo-main-color);
     color: var(--body-main-color);
     
     padding: 10px 55px;
+    transition: background-color var(--time-and-function), box-shadow var(--time-and-function);
 }
 .modal-send-btn:hover, .modal-send-btn:focus {
-    background: #188CE8;
+    background-color: #188CE8;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 /* ======== portfolio  ============
